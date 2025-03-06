@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist/esm",
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "lib": ["dom", "esnext.disposable", "ESNext"],
+    "declaration": true
+  },
+  "include": ["src"]
+}
