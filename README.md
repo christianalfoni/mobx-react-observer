@@ -25,7 +25,7 @@ export default defineConfig({
 });
 ```
 
-**SWC plugine example**
+**SWC plugin example**
 
 ```ts
 import observerPlugin from "mobx-react-observer/swc-plugin";
