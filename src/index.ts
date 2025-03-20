@@ -1,1 +1,1 @@
-export { observer } from "mobx-react-lite";
+export { observer, enableStaticRendering } from "mobx-react-lite";

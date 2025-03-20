@@ -1,6 +1,6 @@
 {
   "name": "mobx-react-observer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Automatic React observer for Mobx",
   "files": [
     "dist"

@@ -64,3 +64,13 @@ function Counter() {
   );
 }
 ```
+
+If you do **server side rendering** (SSR), the plugins will still work, but as always you should use `enableStaticRendering` , for example:
+
+**App.tsx**
+
+```ts
+import { enableStaticRendering } from "mobx-react-observer";
+
+enableStaticRendering(typeof window === "undefined");
+```
