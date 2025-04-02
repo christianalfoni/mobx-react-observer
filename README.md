@@ -2,7 +2,7 @@
 
 Automatic React observer for Mobx
 
-Will wrap all components in your project (not libraries from node_modules) in the `observer`, making observation completely transparent with Mobx. Other benefits:
+Will wrap all components in your project (not libraries from node_modules) with the `observer`, making observation completely transparent with Mobx. Other benefits:
 
 - You can now export functions as normal and they show up with the correct name in React Devtools
 - When exporting with export `const Comp = observer()` VSCode will read that as two definitions of the component, affecting "jump to definition". Now there is only one definition for every component
