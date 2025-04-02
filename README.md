@@ -2,7 +2,60 @@
 
 Automatic React observer for Mobx
 
-Will wrap all components in your project (not libraries from node_modules) with the `observer`, making observation completely transparent with Mobx. Other benefits:
+Will wrap all components in your project (not libraries from node_modules) with the `observer`, making observation completely transparent with Mobx.
+
+**BEFORE**
+
+```tsx
+import { observer } from "mobx-react-lite";
+import { observable } from "mobx";
+
+const counter = observable({
+  count: 0,
+  increase() {
+    counter.count++;
+  },
+});
+
+const Counter = observer(function Counter() {
+  return (
+    <button
+      onClick={() => {
+        counter.increase();
+      }}
+    >
+      Count {counter.count}
+    </button>
+  );
+});
+```
+
+**AFTER**
+
+```tsx
+import { observable } from "mobx";
+
+const counter = observable({
+  count: 0,
+  increase() {
+    counter.count++;
+  },
+});
+
+function Counter() {
+  return (
+    <button
+      onClick={() => {
+        counter.increase();
+      }}
+    >
+      Count {counter.count}
+    </button>
+  );
+}
+```
+
+Other benefits:
 
 - You can now export functions as normal and they show up with the correct name in React Devtools
 - When exporting with export `const Comp = observer()` VSCode will read that as two definitions of the component, affecting "jump to definition". Now there is only one definition for every component
@@ -70,29 +123,4 @@ export default defineConfig({
     }),
   ],
 });
-```
-
-You can now just consume Mobx from any component.
-
-```tsx
-import { observable } from "mobx";
-
-const counter = observable({
-  count: 0,
-  increase() {
-    counter.count++;
-  },
-});
-
-function Counter() {
-  return (
-    <button
-      onClick={() => {
-        counter.increase();
-      }}
-    >
-      Count {counter.count}
-    </button>
-  );
-}
 ```
