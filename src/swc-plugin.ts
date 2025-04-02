@@ -1,6 +1,6 @@
-export default function plugin() {
+export default function plugin(options: { exclude?: string[] } = {}) {
   return [
     "swc-plugin-observing-components",
-    { import_path: "mobx-react-observer" },
+    { import_path: "mobx-react-observer", ...options },
   ];
 }
