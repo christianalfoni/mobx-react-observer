@@ -1,4 +1,4 @@
-# mobx-react-observer
+# 🌟 mobx-react-observer – Automatic React Observer for MobX
 
 Automatic React observer for Mobx
 
