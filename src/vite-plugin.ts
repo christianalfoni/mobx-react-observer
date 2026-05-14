@@ -1,7 +1,7 @@
-import observingComponentsPlugin from "babel-plugin-observing-components";
+import { observingComponents } from "vite-plugin-observing-components";
 
 export default function plugin(options: { exclude?: string[] } = {}) {
-  return observingComponentsPlugin({
+  return observingComponents({
     importPath: "mobx-react-observer",
     ...options,
   });

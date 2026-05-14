@@ -1,6 +1,6 @@
 {
   "name": "mobx-react-observer",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Automatic React observer for Mobx",
   "files": [
     "dist"
@@ -14,15 +14,10 @@
       "types": "./dist/esm/index.d.ts",
       "require": "./dist/cjs/index.cjs"
     },
-    "./babel-plugin": {
-      "import": "./dist/esm/babel-plugin.js",
-      "types": "./dist/esm/babel-plugin.d.ts",
-      "require": "./dist/cjs/babel-plugin.cjs"
-    },
-    "./swc-plugin": {
-      "import": "./dist/esm/swc-plugin.js",
-      "types": "./dist/esm/swc-plugin.d.ts",
-      "require": "./dist/cjs/swc-plugin.cjs"
+    "./vite-plugin": {
+      "import": "./dist/esm/vite-plugin.js",
+      "types": "./dist/esm/vite-plugin.d.ts",
+      "require": "./dist/cjs/vite-plugin.cjs"
     }
   },
   "types": "./dist/esm/index.d.ts",
@@ -46,8 +41,7 @@
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "babel-plugin-observing-components": "^0.2.0",
     "mobx-react-lite": "^4.1.0",
-    "swc-plugin-observing-components": "^0.2.0"
+    "vite-plugin-observing-components": "^0.1.0"
   }
 }

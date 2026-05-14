@@ -71,7 +71,7 @@ npm install mobx-react-observer
 
 ## SSR
 
-If you do **server side rendering** (SSR), the plugins will still work, but as always you should use `enableStaticRendering` , for example:
+If you do **server side rendering** (SSR), the plugins will still work, but as always you should use `enableStaticRendering`, for example:
 
 **App.tsx**
 
@@ -83,44 +83,17 @@ enableStaticRendering(typeof window === "undefined");
 
 ## Configure
 
-**Babel plugin example**
-
 ```ts
-import observerPlugin from "mobx-react-observer/babel-plugin";
-import react from "@vitejs/plugin-react";
+import observerPlugin from "mobx-react-observer/vite-plugin";
 
 export default defineConfig({
   plugins: [
-    react({
-      babel: {
-        plugins: [
-          observerPlugin(
-            // optional
-            { exclude: ["src/ui-components/**"] }
-          ),
-        ],
-      },
-    }),
+    observerPlugin(
+      // optional
+      { exclude: ["src/ui-components/**"] }
+    ),
   ],
 });
 ```
 
-**SWC plugin example**
-
-```ts
-import observerPlugin from "mobx-react-observer/swc-plugin";
-import react from "@vitejs/plugin-react-swc";
-
-export default defineConfig({
-  plugins: [
-    react({
-      plugins: [
-        observerPlugin(
-          // optional
-          { exclude: ["src/ui-components/**"] }
-        ),
-      ],
-    }),
-  ],
-});
-```
+Works with any Vite version and any underlying transformer (SWC or Babel) — no extra configuration needed.
